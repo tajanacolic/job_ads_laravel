@@ -22,15 +22,19 @@ class AdController extends Controller
 
     public function create(Request $request)
     {
-        // $this->validate($request, [
-        //     'job_title' => 'required',
-        //     'job_type' => 'required',
-        //     'job_location' => 'required',
-        //     'job_requirements' => 'required',
-        //     'job_description' => 'required',
-        // ]);
         
-        dd($request);
+        if($request->method() == "POST")
+        {
+            dd("abc");
+            $this->validate($request, [
+             'job_title' => 'required',
+             'job_type' => 'required',
+             'job_location' => 'required',
+             'job_requirements' => 'required',
+             'job_description' => 'required',
+            ]);
+            return back();
+        }
         return view('ads.create');
     }
 

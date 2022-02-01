@@ -1,3 +1,4 @@
+<form style="padding-top: 100px" method="post">
     <div class="row">
         <div class="col-25">
             <label>Job title</label></div>
@@ -41,3 +42,4 @@
     <div class="row">
         <input type="submit" value="Submit">
     </div>
+</form>

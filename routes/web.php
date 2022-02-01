@@ -36,6 +36,6 @@ Route::get('/jobs/applications', [AppController::class, 'index'])->name('index.a
 Route::get('/jobs/applications/view', [AppController::class, 'view'])->name('view.app');
 Route::delete('/jobs/applications/view/{app}', [AppController::class, 'delete'])->name('delete.app');
 
-Auth::routes();
+//Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

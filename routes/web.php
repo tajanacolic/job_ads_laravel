@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AdController;
 use App\Http\Controllers\AppController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AdController::class, 'index'])->name('index.ad');
 Route::get('/jobs', [AdController::class, 'index'])->name('index.ad');
-Route::get('/jobs/', [AdController::class, 'index'])->name('index.ad');
+// Route::get('/jobs/', [AdController::class, 'index'])->name('index.ad');
 Route::get('/jobs/index', [AdController::class, 'index'])->name('index.ad');
 
 Route::get('/jobs/create', [AdController::class, 'create'])->name('create.ad');
@@ -35,6 +37,11 @@ Route::get('/jobs/applications', [AppController::class, 'index'])->name('index.a
 
 Route::get('/jobs/applications/view', [AppController::class, 'view'])->name('view.app');
 Route::delete('/jobs/applications/view/{app}', [AppController::class, 'delete'])->name('delete.app');
+
+Route::post('/signout', [LogoutController::class, 'store'])->name('signout');
+
+Route::get('/signin', [LoginController::class, 'index'])->name('signin');
+Route::post('/signin', [LoginController::class, 'store']);
 
 //Auth::routes();
 

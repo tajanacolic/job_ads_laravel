@@ -15,23 +15,22 @@ class AdController extends Controller
     public function index()
     {
         $ads = Ad::latest()->paginate(20);
-        return view('ads.index',[
+        return view('ads.index', [
             'ads' => $ads
         ]);
     }
 
     public function create(Request $request)
     {
-        
-        if($request->method() == "POST")
-        {
+
+        if ($request->method() == "POST") {
             dd("abc");
             $this->validate($request, [
-             'job_title' => 'required',
-             'job_type' => 'required',
-             'job_location' => 'required',
-             'job_requirements' => 'required',
-             'job_description' => 'required',
+                'job_title' => 'required',
+                'job_type' => 'required',
+                'job_location' => 'required',
+                'job_requirements' => 'required',
+                'job_description' => 'required',
             ]);
             return back();
         }

@@ -34,19 +34,19 @@
 
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="menu" href="/jobs/create">Create new job ad</a>
+                <a class="menu" href="{{ route('create.ad') }}">Create new job ad</a>
             </li>
             <li class="nav-item">
-                <a class="menu" href="/jobs">Job ads</a>
+                <a class="menu" href="{{ route('index.ad') }}">Job ads</a>
             </li>
             <li class="nav-item">
-                <a class="menu" href="/jobs/applications">Job applications</a>
+                <a class="menu" href="{{ route('index.app') }}">Job applications</a>
             </li>
             <li class="nav-item">
-                <a class="menu" href="/jobs/signout">Sign out</a>
+                <a class="menu" href="{{ route('signout') }}">Sign out</a>
             </li>
             <li class="nav-item">
-                <a class="menu" href="/jobs/signin">Sign in</a>
+                <a class="menu" href="{{ route('signin') }}">Sign in</a>
             </li>
             
         </ul>

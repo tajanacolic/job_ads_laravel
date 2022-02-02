@@ -43,6 +43,8 @@ Route::post('/signout', [LogoutController::class, 'store'])->name('signout');
 Route::get('/signin', [LoginController::class, 'index'])->name('signin');
 Route::post('/signin', [LoginController::class, 'store']);
 
+Auth::routes(['register' => false]);
+
 //Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

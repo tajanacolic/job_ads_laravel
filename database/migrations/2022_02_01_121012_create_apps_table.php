@@ -17,7 +17,7 @@ class CreateAppsTable extends Migration
             $table->id();
             $table->string('app_name');
             $table->string('app_surname');
-            $table->string('app_email')->unique();
+            $table->string('app_email');
             $table->integer('job_tel');
             $table->foreignId('ads_id')->constrained()->onDelete('cascade');
             $table->string('app_cv', 2048);

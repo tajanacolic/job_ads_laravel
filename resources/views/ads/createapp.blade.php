@@ -3,12 +3,32 @@
 @section('form')
     <h1 class="view-title-app">Send application</h1>
     <div class="container">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                @error('name')
+                <div>  {{ $message }} </div>
+                @enderror
+                @error('surname')
+                    <div>  {{ $message }} </div>
+                @enderror
+                @error('email')
+                    <div>  {{ $message }} </div>
+                @enderror
+                @error('phone')
+                    <div>  {{ $message }} </div>
+                @enderror
+                @error('cv')
+                    <div>  {{ $message }} </div>
+                @enderror
+            </div>
+        @endif
         <form style="padding-top: 100px" method="post" enctype="multipart/form-data">
+            @csrf
             <div class="row">
                 <div class="col-25">
                     <label>Name</label></div>
                 <div class="col-75">
-                    <input type="text" name="job_name" placeholder="Eg. John" value="">
+                    <input type="text" name="name" placeholder="Eg. John" value="{{ old('name') }}">
                 </div>
             </div>
             <div class="row">
@@ -16,7 +36,7 @@
                     <label>Surname</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" name="job_surname" placeholder="Eg. Doe" value="">
+                    <input type="text" name="surname" placeholder="Eg. Doe" value="{{ old('surname') }}">
                 </div>
             </div>
             <div class="row">
@@ -24,7 +44,7 @@
                     <label>Email address</label>
                 </div>
                 <div class="col-75">
-                    <input type="email" name="job_email" placeholder="Eg. john@example.com" value="">
+                    <input type="email" name="email" placeholder="Eg. john@example.com" value="{{ old('email') }}">
                 </div>
             </div>
             <div class="row">
@@ -32,7 +52,7 @@
                     <label>Phone number</label>
                 </div>
                 <div class="col-75">
-                    <input type="tel" name="job_tel" placeholder="Eg. +657 653 987" value="">
+                    <input type="tel" name="phone" placeholder="Eg. +657 653 987" value="{{ old('phone') }}">
                 </div>
             </div>
             <div class="row">
@@ -40,10 +60,10 @@
                     <label>Upload CV</label>
                 </div>
                 <div class="col-75">
-                    <input type="file" name="job_cv" value="">
+                    <input type="file" name="cv" value="{{ old('cv') }}">
                 </div>
             </div>
-            <input type="hidden" name="job_id" value="">
+            <input type="hidden" name="ads_id" value="{{ $ad->id }}">
             <br>
             <div class="row">
                 <input type="submit" value="Submit">

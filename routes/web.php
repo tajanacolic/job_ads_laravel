@@ -35,13 +35,14 @@ Route::post('/jobs/view/{ad}', [AppController::class, 'create'])->name('create.a
 
 Route::get('/jobs/applications', [AppController::class, 'index'])->name('index.app');
 
-Route::get('/jobs/applications/view', [AppController::class, 'view'])->name('view.app');
+Route::get('/jobs/applications/view/{app}', [AppController::class, 'view'])->name('view.app');
 Route::delete('/jobs/applications/view/{app}', [AppController::class, 'delete'])->name('delete.app');
 
 Route::post('/signout', [LogoutController::class, 'store'])->name('signout');
 
 Route::get('/signin', [LoginController::class, 'index'])->name('signin');
 Route::post('/signin', [LoginController::class, 'store']);
+
 
 //Auth::routes();
 

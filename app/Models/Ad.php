@@ -15,6 +15,5 @@ class Ad extends Model
         'job_location',
         'job_requirements',
         'job_description',
-        'job_image'
     ];
 }

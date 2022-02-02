@@ -23,18 +23,24 @@ class AdController extends Controller
     public function create(Request $request)
     {
 
-        if ($request->method() == "POST") {
-            dd("abc");
-            $this->validate($request, [
-                'job_title' => 'required',
-                'job_type' => 'required',
-                'job_location' => 'required',
-                'job_requirements' => 'required',
-                'job_description' => 'required',
-            ]);
-            return back();
+        if ($request->method() == "GET") {
+            return view('ads.create');
         }
-        return view('ads.create');
+        $this->validate($request, [
+            'job_title' => 'required',
+            'job_type' => 'required',
+            'job_location' => 'required',
+            'job_requirements' => 'required',
+            'job_description' => 'required',
+        ]);
+        Ad::create([
+            'job_title' => $request->job_title,
+            'job_type'=> $request->job_type,
+            'job_location' => $request->job_location,
+            'job_requirements' => $request->job_requirements,
+            'job_description' => $request->job_description,
+        ]);
+        return redirect()->route('index.ad');
     }
 
     public function view(Ad $ad)

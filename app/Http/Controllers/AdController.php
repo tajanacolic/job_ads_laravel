@@ -75,6 +75,6 @@ class AdController extends Controller
             'job_description' => $request->job_description,
         ]);
 
-        return redirect()->route('update.ad', $ad);
+        return redirect()->route('view.ad', $ad);
     }
 }

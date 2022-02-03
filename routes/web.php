@@ -40,6 +40,7 @@ Route::get('/jobs/applications', [AppController::class, 'index'])->name('index.a
 Route::get('/jobs/applications/view/{app}', [AppController::class, 'view'])->name('view.app');
 Route::delete('/jobs/applications/view/{app}', [AppController::class, 'delete'])->name('delete.app');
 
+Route::get('/signout', [LogoutController::class, 'index'])->name('signout');
 Route::post('/signout', [LogoutController::class, 'store'])->name('signout');
 
 Route::get('/download/{app}', [DownloadController::class, 'download'])->name('download');

@@ -34,7 +34,7 @@ class AppController extends Controller
             'ads_id' => 'required',
             'cv' => 'required'
         ]);
-        $path = $request->file('cv')->store('cv', 'public');
+        $path = $request->cv->storeAs('cv/' . Str::random(8), $request->cv->getClientOriginalName(), 'public');
         App::create([
             'app_name' => $request->name,
             'app_surname' => $request->surname,
@@ -48,8 +48,16 @@ class AppController extends Controller
 
     public function view(App $app)
     {
-        return view('apps.view',[
-            'app'=>$app
+        return view('apps.view', [
+            'app' => $app
         ]);
+    }
+
+    public function delete(App $app)
+    {
+
+        $app->delete();
+
+        return redirect()->route('index.app');
     }
 }

@@ -16,6 +16,6 @@
             </tbody>
         </table>
     @else
-        <p>There are no ads</p>
+        <p>There are no applications.</p>
     @endif
 @endsection

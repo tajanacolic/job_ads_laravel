@@ -28,7 +28,9 @@ class LoginController extends Controller
             'password' => 'required',
 
         ]);
+
         if (!auth()->attempt($request->only('username', 'password'), $request->remember)) {
+
             return back()->with('status', 'Invalid login details');
         }
         return redirect()->route('index.ad');

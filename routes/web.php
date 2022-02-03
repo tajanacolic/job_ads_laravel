@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [AdController::class, 'index'])->name('index.ad');
+Route::get('/home', [AdController::class, 'index'])->name('index.ad');
 Route::get('/jobs', [AdController::class, 'index'])->name('index.ad');
 // Route::get('/jobs/', [AdController::class, 'index'])->name('index.ad');
 Route::get('/jobs/index', [AdController::class, 'index'])->name('index.ad');

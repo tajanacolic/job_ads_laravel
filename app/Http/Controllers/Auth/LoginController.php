@@ -23,14 +23,13 @@ class LoginController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-
             'username' => 'required',
             'password' => 'required',
 
         ]);
-        if (!auth()->attempt($request->only('username', 'password'), $request->remember)) {
-            return back()->with('status', 'Invalid login details');
+        if (auth()->attempt($request->only('username', 'password'), $request->remember)) {
+            return redirect()->intended('index.ad');
         }
-        return redirect()->route('index.ad');
+        return back()->with('status', 'Invalid login details');
     }
 }

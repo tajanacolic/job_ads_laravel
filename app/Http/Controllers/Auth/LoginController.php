@@ -17,6 +17,15 @@ class LoginController extends Controller
 
     public function index()
     {
+        /*
+        User::create([
+
+            'username' => 'idkstudio',
+            'password' => Hash::make('123'),
+
+        ]);
+        */
+
         return view('auth.login');
     }
 

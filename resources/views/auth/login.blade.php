@@ -9,7 +9,7 @@
 
         @if (session('status'))
 
-            <div class="bg-red-500 p-4 rounded-lg mb-6 text-white text-center">
+            <div class="alert alert-danger">
 
                     {{ session('status') }}
 
@@ -17,7 +17,7 @@
 
         @endif
 
-        <form action="{{ route('signin') }}" method="post">
+        <form action="{{ route('login') }}" method="post">
 
             @csrf
 
@@ -26,7 +26,7 @@
                 <label for="username">Username</label></div>
 
                 <div class="col-75">
-                    <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username">
+                    <input id="username" value="{{ old('username') }}" type="text" class="form-control @error('username') is-invalid @enderror" name="username">
 
                     @error('username')
                         <span class="invalid-feedback" role="alert">

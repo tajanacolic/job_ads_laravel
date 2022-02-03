@@ -43,7 +43,7 @@ Route::post('/signout', [LogoutController::class, 'store'])->name('signout');
 
 Route::get('/download/{app}', [DownloadController::class, 'download'])->name('download');
 
-Route::get('/signin', [LoginController::class, 'index'])->name('signin');
+Route::get('/signin', [LoginController::class, 'index'])->name('login');
 Route::post('/signin', [LoginController::class, 'store']);
 
 

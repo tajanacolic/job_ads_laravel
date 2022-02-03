@@ -46,7 +46,7 @@
                 <a class="menu" href="{{ route('signout') }}">Sign out</a>
             </li>
             <li class="nav-item">
-                <a class="menu" href="{{ route('signin') }}">Sign in</a>
+                <a class="menu" href="{{ route('login') }}">Sign in</a>
             </li>
             
         </ul>

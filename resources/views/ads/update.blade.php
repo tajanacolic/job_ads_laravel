@@ -2,5 +2,5 @@
 
 @section('content')
     <h1 class="view-title">Update job ad</h1>
-    <x-updatead/>
+    <x-adUpdate :ad="$ad"/>
 @endsection

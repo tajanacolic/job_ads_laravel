@@ -67,6 +67,14 @@ class AdController extends Controller
             ]);
         }
 
-        $ad->update();
+        $ad->update([
+            'job_title' => $request->job_title,
+            'job_type' => $request->job_type,
+            'job_location' => $request->job_location,
+            'job_requirements' => $request->job_requirements,
+            'job_description' => $request->job_description,
+        ]);
+
+        return redirect()->route('update.ad', $ad);
     }
 }

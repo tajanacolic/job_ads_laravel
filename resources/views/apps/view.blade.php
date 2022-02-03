@@ -4,12 +4,10 @@
 
     <div>
 
-        <form style="display: inline-block" method="post" action="/jobs/applications/view/delete">
-
-            <input type="hidden" name="app_id" value="{{ $app->id }}">
-
+        <form style="display: inline-block" method="post" action="{{ route('delete.app', $app) }}">
+            @csrf
+            @method('DELETE')
             <button type="submit" class="button-details">Delete</button>
-
         </form>
 
     </div>

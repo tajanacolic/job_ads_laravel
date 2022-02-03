@@ -35,7 +35,7 @@ class AdController extends Controller
         ]);
         Ad::create([
             'job_title' => $request->job_title,
-            'job_type'=> $request->job_type,
+            'job_type' => $request->job_type,
             'job_location' => $request->job_location,
             'job_requirements' => $request->job_requirements,
             'job_description' => $request->job_description,
@@ -48,5 +48,25 @@ class AdController extends Controller
         return view('ads.createapp', [
             'ad' => $ad
         ]);
+    }
+
+    public function delete(Ad $ad)
+    {
+
+        $ad->delete();
+
+        return redirect()->route('index.ad');
+    }
+
+    public function update(Request $request, Ad $ad)
+    {
+
+        if ($request->method() == "GET") {
+            return view('ads.update', [
+                'ad' => $ad
+            ]);
+        }
+
+        $ad->update();
     }
 }

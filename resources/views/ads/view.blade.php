@@ -17,5 +17,11 @@
     <h2 class="view-title2">{{ $ad->job_requirements }}</h2>
     <h3 class="view-title3">{{ $ad->created_at }} | {{ $ad->job_type }} | {{ $ad->job_location }}</h3>
     <p class="view-description">{{ $ad->job_description }}</p>
-    @yield('form')
+
+    @guest
+
+        @yield('form')
+        
+    @endguest
+
 @endsection

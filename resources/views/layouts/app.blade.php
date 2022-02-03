@@ -51,7 +51,7 @@
                 <li class="nav-item">
                     <a class="menu" href="{{ route('index.app') }}">Job applications</a>
                 </li>
-                <li class="nav-item menu">
+                <li class="nav-item">
                     <form action="{{ route('signout') }}" method="post">
                         @csrf
                         <button class="menu" type="submit">Sign out</button>

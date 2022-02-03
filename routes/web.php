@@ -4,6 +4,7 @@ use App\Http\Controllers\AdController;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\DownloadController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -39,6 +40,8 @@ Route::get('/jobs/applications/view/{app}', [AppController::class, 'view'])->nam
 Route::delete('/jobs/applications/view/{app}', [AppController::class, 'delete'])->name('delete.app');
 
 Route::post('/signout', [LogoutController::class, 'store'])->name('signout');
+
+Route::get('/download/{app}', [DownloadController::class, 'download'])->name('download');
 
 Route::get('/signin', [LoginController::class, 'index'])->name('signin');
 Route::post('/signin', [LoginController::class, 'store']);

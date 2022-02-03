@@ -32,9 +32,9 @@ class AppController extends Controller
             'email' => 'required',
             'phone' => 'required',
             'ads_id' => 'required',
-            'cv' => 'required'
+            'cv' => 'required|file|mimes:pdf'
         ]);
-        $path = $request->cv->storeAs('cv/' . Str::random(8), $request->cv->getClientOriginalName(), 'public');
+        $path = $request->file('cv')->store('cv');
         App::create([
             'app_name' => $request->name,
             'app_surname' => $request->surname,

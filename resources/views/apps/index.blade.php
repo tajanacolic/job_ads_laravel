@@ -16,6 +16,6 @@
             </tbody>
         </table>
     @else
-        <p>There are no applications.</p>
+        <h1 class="view-title">There are no current applications</h1>
     @endif
 @endsection

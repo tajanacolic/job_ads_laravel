@@ -17,6 +17,6 @@
             </tbody>
         </table>
     @else
-        <p>There are no ads.</p>
+        <h1 class="view-title">There are no current ads</h1>
     @endif
 @endsection

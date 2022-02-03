@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [AdController::class, 'index'])->name('index.ad');
 Route::get('/home', [AdController::class, 'index'])->name('index.ad');
 Route::get('/jobs', [AdController::class, 'index'])->name('index.ad');
-// Route::get('/jobs/', [AdController::class, 'index'])->name('index.ad');
+//Route::get('/jobs/', [AdController::class, 'index'])->name('index.ad');
 Route::get('/jobs/index', [AdController::class, 'index'])->name('index.ad');
 
 Route::get('/jobs/create', [AdController::class, 'create'])->name('create.ad');
@@ -40,9 +40,11 @@ Route::get('/jobs/applications', [AppController::class, 'index'])->name('index.a
 Route::get('/jobs/applications/view/{app}', [AppController::class, 'view'])->name('view.app');
 Route::delete('/jobs/applications/view/{app}', [AppController::class, 'delete'])->name('delete.app');
 
+Route::get('/signout', [LogoutController::class, 'index'])->name('signout');
 Route::post('/signout', [LogoutController::class, 'store'])->name('signout');
 
-Route::get('/download/{app}', [DownloadController::class, 'download'])->name('download');
+Route::get('/download/{app}', [DownloadController::class, 'index'])->name('download');
+Route::post('/download/{app}', [DownloadController::class, 'download']);
 
 Route::get('/signin', [LoginController::class, 'index'])->name('login');
 Route::post('/signin', [LoginController::class, 'store']);

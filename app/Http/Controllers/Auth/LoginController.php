@@ -28,7 +28,7 @@ class LoginController extends Controller
 
         ]);
         if (auth()->attempt($request->only('username', 'password'), $request->remember)) {
-            return redirect()->intended('index.ad');
+            return redirect()->intended('home');
         }
         return back()->with('status', 'Invalid login details');
     }

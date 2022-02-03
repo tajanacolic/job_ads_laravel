@@ -7,9 +7,17 @@ use Illuminate\Http\Request;
 
 class LogoutController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth']);
+    }
+    public function index()
+    {
+       return back();
+    }
+
     public function store()
     {
-
         auth()->logout();
 
         return redirect()->route('index.ad');

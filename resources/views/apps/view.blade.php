@@ -19,5 +19,8 @@
 
     <a class="button-details" href="{{ route('view.ad', $app->ads_id) }}">Job ad</a>
 
-    <a class="button-details" href="{{ route('download', $app) }}">Download CV</a>
+    <form action="{{ route('download', $app) }}" method="post">
+        @csrf
+        <button type="submit" class="button-details">Download CV</button>
+    </form>
 @endsection

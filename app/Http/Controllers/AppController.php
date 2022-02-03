@@ -34,7 +34,7 @@ class AppController extends Controller
             'ads_id' => 'required',
             'cv' => 'required'
         ]);
-        $path = $request->cv->storeAs('cv/'. Str::random(8), $request->cv->getClientOriginalName(), 'public');
+        $path = $request->file('cv')->store('cv', 'public');
         App::create([
             'app_name' => $request->name,
             'app_surname' => $request->surname,

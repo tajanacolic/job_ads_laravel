@@ -21,6 +21,7 @@
 
     <a class="button-details" href="{{ route('view.ad', $app->ads_id) }}">Job ad</a>
 
-    <a class="button-details" href="{{ Storage::disk('public')->get($app->app_cv) }}">Download CV</a>
-
+    <form action="" onsubmit="{{ Storage::disk('public')->download($app->app_cv) }}">
+    <button type="submit" class="button-details">Download CV</button>
+    </form>
 @endsection

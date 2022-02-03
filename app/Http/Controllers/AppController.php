@@ -14,7 +14,7 @@ class AppController extends Controller
 
     public function __construct()
     {
-        // $this->middleware(['auth'])->only('index', 'view', 'delete');
+        $this->middleware(['auth'])->only('index', 'view', 'delete');
     }
 
     public function index()

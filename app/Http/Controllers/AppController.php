@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Storage;
 class AppController extends Controller
 {
 
+    public function __construct()
+    {
+        // $this->middleware(['auth'])->only('index', 'view', 'delete');
+    }
+
     public function index()
     {
         $apps = App::latest()->paginate(20);

@@ -54,7 +54,7 @@
                 <li class="nav-item">
                     <form action="{{ route('signout') }}" method="post">
                         @csrf
-                        <button class="menu" type="submit">Sign out</button>
+                        <button class="menu" type="submit" id="signoutbutton">Sign out</button>
                     </form>
                 </li>
 

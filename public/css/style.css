@@ -49,6 +49,24 @@ li a.active {
     color: hsl(180, 29%, 50%);
 }
 
+li button {
+    display: block;
+    border: none;
+    background-color: hsl(180, 29%, 50%);
+    color: hsl(180, 52%, 96%);
+    padding: 15px 30px;
+    text-decoration: none;
+    width: 100%;
+    text-align: left;
+    font-family: "Spartan", sans-serif;
+    font-weight: 700;
+}
+
+#signoutbutton:hover {
+    background-color: hsl(180, 52%, 96%);
+    color: hsl(180, 29%, 50%);
+}
+
 .header {
     padding: 70px;
     background: hsl(180, 29%, 50%);

@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1 class="view-title">Please Sign in</h1>
+    <h1 class="view-title">Sign in</h1>
 
 
     <div class="justify-content-center" style="padding-top: 100px">

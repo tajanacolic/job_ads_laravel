@@ -67,7 +67,7 @@
                 <input type="hidden" name="ads_id" value="{{ $ad->id }}">
                 <br>
                 <div class="row">
-                    <input type="submit" value="Submit">
+                    <input class="createapp" type="submit" value="Send">
                 </div>
             </form>
         </div>
